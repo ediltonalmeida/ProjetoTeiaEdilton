@@ -1,0 +1,62 @@
+
+.example-card {
+  margin-bottom: 20px; /* Adiciona margem inferior entre os cards */
+}
+
+.image-container {
+  text-align: center; /* Centraliza a imagem */
+}
+
+.image-container img {
+  max-width: 100%; /* Garante que a imagem não ultrapasse a largura do contêiner */
+}
+
+.content {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+.maiuscula{
+  text-transform: capitalize;
+}
+
+.alerta{
+    color: gray;
+    text-align: center;
+}
+.alinharBarra{
+    text-align: center;
+    margin-top: 15px;
+}
+
+.selection-icon {
+  position: relative;
+  top: 6px;
+  margin-right: 16px;
+}
+ 
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Ajusta o espaço entre as colunas */
+}
+
+.custom-card{
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-titulo{
+  padding-top: 5px;
+  text-align: center;
+  margin: 0;
+}
+
+
+
+
+
+
+

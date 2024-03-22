@@ -1,0 +1,20 @@
+<h1 mat-dialog-title>{{ data.title }}</h1>
+<mat-dialog-content class="error-message">{{ data.message }}</mat-dialog-content>
+<mat-dialog-actions class="actions">
+    <button mat-button mat-raised-button type="button" *ngFor="let option of data.options"
+        [mat-dialog-close]="option">{{option}}</button>
+
+    <div class="botao-copiar-mensagem">
+        <button mat-raised-button (click)="acionarIcone()" [cdkCopyToClipboard]="data.message">
+            <mat-icon>content_copy</mat-icon> Copiar mensagem de erro
+        </button>
+
+        <div class="curtain">
+            <div class="curtain-wrapper">
+                <div [@curtainAnimation]="mostrarIcone ? 'show' : 'hidden'" class="curtain-panel"></div>
+                <span [@iconAnimation]="mostrarIcone ? 'show' : 'hidden'"
+                    class="material-icons icone-check">check</span>
+            </div>
+        </div>
+    </div>
+</mat-dialog-actions>

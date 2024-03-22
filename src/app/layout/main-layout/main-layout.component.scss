@@ -1,0 +1,35 @@
+#navbar-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: fit-content;
+}
+
+#navbar-container .toolbar {
+    display: flex;
+    flex-direction: row;
+}
+
+#navbar-toolbar {
+    z-index: 2;
+    position: fixed;
+}
+
+.fill-remaining-space {
+    flex: 1 1 auto;
+}
+
+#body-container {
+    margin-top: 80px;
+}
+
+#title {
+    cursor: pointer;
+    margin-right: 12px;
+}
+
+.teia{
+    margin-top: 2px;
+}

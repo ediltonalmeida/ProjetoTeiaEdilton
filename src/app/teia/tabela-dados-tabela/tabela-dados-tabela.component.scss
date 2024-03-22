@@ -1,0 +1,85 @@
+.alerta{
+    color: gray;
+    text-align: center;
+}
+.alinharBarra{
+    text-align: center;
+    margin-top: 15px;
+}
+ 
+.content {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+}
+
+.maiuscula{
+    text-transform: capitalize;
+}
+
+.filtro{
+    margin-top: 25px;
+    margin-bottom: 10px;
+    text-align: center;
+    display: flex;
+}
+
+table {
+    border-collapse: separate;
+    max-height: 600px;
+  }
+  
+  td {
+    border: 20px solid #fff;
+    border-left: 0;
+    border-right: 0;
+    height: 100px;
+    background-color: rgb(252, 252, 252);
+    font-size: 18px;
+  }
+
+  th{
+    font-weight: bold;
+    color: #fff;
+    font-size: 18px;
+    background-color: #005BA8;
+  }
+
+.mouseSeta{
+    cursor: pointer;
+}
+
+
+.mat-button-toggle:hover {
+    background-color: transparent;
+    color: #dcdcdc !important;
+  }
+  .mat-button-toggle-checked {
+    background-color: #45c0ae;
+    color: #ffffff !important;
+  }
+  .mat-form-field-appearance-legacy .mat-form-field-underline {
+    background-color: blue;
+  }
+  .mat-row {
+    border-color: #eeeeee;
+  }
+  .mat-row:hover .mat-cell {
+    border-color: #45c0ae;
+    background-color : #45c0ae;
+    color: #ffffff;
+  }
+  .mouse:hover{
+    border-color:#ffffff !important; text-decoration:none !important; color:#ffffff !important;}
+
+.custom-card{
+    display: flex;
+    flex-direction: column;
+}
+    
+.custom-titulo{
+padding-top: 5px;
+text-align: center;
+margin: 0;
+}

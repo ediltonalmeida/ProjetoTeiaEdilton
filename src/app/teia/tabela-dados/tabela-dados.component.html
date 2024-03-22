@@ -1,0 +1,77 @@
+<mat-card-header class="titulo custom-card" >
+    <mat-card-title class="custom-titulo">
+        <h2>Listar Albums - Grade</h2>
+    </mat-card-title>
+</mat-card-header>
+<div *ngIf="barra" class="alinharBarra">
+    <mat-progress-bar [appProgressBarColor]="corbarra" mode="indeterminate"></mat-progress-bar>
+    <small class="alerta">Carregando dados, aguarde! ...</small>
+</div>
+<br>
+
+<!-- filtros -->
+
+<div class="row" *ngIf="principal">
+    <div class="col-2 fullwidth-form-container">
+        <mat-form-field appearance="outline">
+            <mat-label>Selecione Album</mat-label>
+            <mat-select>
+                <mat-option (click)="filtrarAlbum('')" [value]=""></mat-option>
+                <mat-option (click)="filtrarAlbum(numero)" *ngFor="let numero of listaAlbums" [value]="numero">{{numero}}</mat-option>
+            </mat-select>
+    </mat-form-field>
+    </div>
+    <div class="col-2 fullwidth-form-container">
+        <mat-form-field appearance="outline">
+            <mat-label>Pesquisar Nº</mat-label>
+            <input type="text" placeholder="Pesquisar por Nº" matInput (input)="filtrarNumber($event.target.value)">
+        </mat-form-field>
+    </div>
+    <div class="col-6 fullwidth-form-container">
+        <mat-form-field appearance="outline">
+            <mat-label>Pesquisar Título</mat-label>
+            <input type="text" placeholder="Pesquisar por Título" matInput (input)="filtrarTitulo($event.target.value)">
+        </mat-form-field>
+    </div>
+    <div class="col-2 fullwidth-form-container">
+        <mat-form-field appearance="outline">
+            <mat-label>Classificar por</mat-label>
+            <mat-select #select>
+                <mat-select-trigger *ngIf="select.value"><mat-icon>{{select.value.icon}}</mat-icon>{{select.value.viewValue}}</mat-select-trigger>
+                <mat-option (click)="classificar(item.value, item.icon)" *ngFor="let item of classificarAlbum" [value]="item.value">
+                    <mat-icon>{{item.icon}}</mat-icon>{{item.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    
+</div>
+
+<!-- cards -->
+<div class="row" *ngIf="principal">
+    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3" *ngFor="let album of albums | 
+                slice:(paginator.pageIndex * paginator.pageSize):((paginator.pageIndex + 1 ) *paginator.pageSize)">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title-group>
+                    <mat-card-title>Album: {{album.albumId}}</mat-card-title>
+                    <mat-card-subtitle>Nº {{album.id}}</mat-card-subtitle>
+                <div class="image-container">
+                <img class="rounded-circle" style="cursor: pointer;" (click)="openDialog(album)" src="{{album.thumbnailUrl}}">
+                </div>
+                </mat-card-title-group>
+            </mat-card-header>
+            <br>
+                <mat-card-content class="content maiuscula" title="{{album.title}}">
+                    {{album.title}}
+                </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+<mat-paginator #paginator [length]="length"
+              [pageIndex]="pageIndex"
+              [pageSize]="pageSize"
+              [pageSizeOptions]="[8,12,24,36]"
+              (page)="changePage($event)">
+</mat-paginator>

@@ -1,0 +1,47 @@
+.error-message {
+    white-space: pre-wrap; /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
+.actions {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.botao-copiar-mensagem {
+    margin-left: 10px;
+}
+
+.icone-check {
+    font-size: 30px;
+    color: green;
+    vertical-align: middle;
+
+    position: absolute;
+    z-index: 1;
+}
+
+.curtain {
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.curtain-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.curtain-panel {
+    background: white;
+    width: 100%;
+    height: 100%;
+    float: right;
+    position: relative;
+    z-index: 2;
+}

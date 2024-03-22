@@ -1,0 +1,19 @@
+<mat-card class="error-msg">
+
+    <div class="botao-copiar-mensagem">
+        <button mat-raised-button (click)="acionarIcone()" [cdkCopyToClipboard]="errorMessage">
+            <mat-icon>content_copy</mat-icon> Copiar mensagem de erro
+        </button>
+
+        <div class="curtain">
+            <div class="curtain-wrapper">
+                <div [@curtainAnimation]="mostrarIcone ? 'show' : 'hidden'" class="curtain-panel"></div>
+                <span [@iconAnimation]="mostrarIcone ? 'show' : 'hidden'"
+                    class="material-icons icone-check">check</span>
+            </div>
+        </div>
+    </div>
+    <div>
+        {{ errorMessage }}
+    </div>
+</mat-card>

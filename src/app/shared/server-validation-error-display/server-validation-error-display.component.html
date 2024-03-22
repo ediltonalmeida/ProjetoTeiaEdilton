@@ -1,0 +1,9 @@
+<mat-card *ngIf="exibir">
+    <mat-card-title>Erros de validação:</mat-card-title>
+
+    <mat-card-content>
+        <span *ngFor="let error of errors">
+            <div>{{ error }}</div>
+        </span>
+    </mat-card-content>
+</mat-card>

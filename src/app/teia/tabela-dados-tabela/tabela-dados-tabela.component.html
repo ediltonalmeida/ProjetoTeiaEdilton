@@ -1,0 +1,54 @@
+<mat-card-header class="titulo custom-card" >
+    <mat-card-title class="custom-titulo">
+        <h2>Listar Albums - Tabela</h2>
+    </mat-card-title>
+</mat-card-header>
+<div *ngIf="barra" class="alinharBarra">
+    <mat-progress-bar [appProgressBarColor]="corbarra" mode="indeterminate"></mat-progress-bar>
+    <small class="alerta">Carregando dados, aguarde! ...</small>
+</div>
+<br>
+<div class='row filtro' *ngIf="principal" >
+    <div class="col-3 fullwidth-form-container"></div>
+    <div class="col-6 fullwidth-form-container">
+        <mat-form-field appearance="outline">
+            <mat-label>
+                <span class="material-icons">
+                search
+                </span>Filtro
+            </mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Digite para pesquisar valor na tabela" #input>
+        </mat-form-field>
+    </div>
+</div>
+<div class="tabela mat-elevation-z8" *ngIf="principal">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+
+       <ng-container matColumnDef="albumId">
+           <th mat-header-cell *matHeaderCellDef mat-sort-header>Album</th>
+           <td mat-cell *matCellDef="let element"> {{element.albumId}} </td>
+       </ng-container>
+
+       <ng-container matColumnDef="id">
+           <th mat-header-cell *matHeaderCellDef mat-sort-header>Nº</th>
+           <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+       </ng-container>
+
+       <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Título</th>
+        <td mat-cell *matCellDef="let element" class="content maiuscula" > {{element.title}} </td>
+       </ng-container>
+
+       <ng-container matColumnDef="thumbnailUrl">
+        <th mat-header-cell *matHeaderCellDef>Capa</th>
+        <td mat-cell *matCellDef="let element">
+             <img (click)="openDialog(element)" class="rounded-circle mouseSeta" width="80px" height="80px" title="Abrir/Detalhar" src="{{element.thumbnailUrl}}">
+        </td>
+       </ng-container>
+
+       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+   </table>
+   <mat-paginator #paginator [pageSizeOptions]="[4,20,50,100,500]"></mat-paginator>
+</div>

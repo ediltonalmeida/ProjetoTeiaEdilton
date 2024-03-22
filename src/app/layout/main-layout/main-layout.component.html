@@ -1,0 +1,38 @@
+<div id="navbar-container">
+    <mat-toolbar id="navbar-toolbar" color="primary" class="barraDeMenu">
+        <div class="container toolbar">
+
+            <h1 id="title" routerLink="/">
+				<img src="assets/caixa_2cores_negativa.png" height="19px" >
+			</h1>	
+			<span> | </span>
+			<span class="teia"> &nbsp; TEIA </span> 
+
+            <ng-container>
+				<button mat-button [matMenuTriggerFor]="sub" class="itemMenu">
+					Albums
+				</button>
+					<mat-menu #sub="matMenu">
+						<button mat-menu-item routerLinkActive="active" routerLink="Grade">
+							<span class="material-icons">table_chart</span>
+							 Albums - Grade
+						</button>
+						<button mat-menu-item routerLinkActive="active" routerLink="Tabela">
+							<span class="material-icons">table_rows</span>
+							 Albums - Tabela
+						</button>
+						<button mat-menu-item routerLinkActive="active" >
+							<a href ='assets/Documentacao.pdf' target="_blank">
+								<span class="material-icons">list_alt</span>
+								 Funcionalidades
+							</a>
+						</button>
+					</mat-menu>
+			</ng-container>
+            <span class="fill-remaining-space"></span>
+        </div>
+    </mat-toolbar>
+</div>
+<div id="body-container" class="container">
+    <router-outlet></router-outlet>
+</div>

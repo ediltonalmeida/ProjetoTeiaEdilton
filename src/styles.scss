@@ -1,0 +1,105 @@
+@import "variables";
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/utilities";
+@import "reset";
+
+body {
+    margin: 0;
+}
+
+table.mat-table {
+    width: 100%;
+}
+
+button.menuDropDown {
+    padding-right: 8px;
+}
+
+.dataTables_empty {
+    display: none;
+}
+
+.card-header {
+    background-color: #e4e5e6 !important;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+}
+
+.fullwidth-form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.fullwidth-form-container > * {
+    width: 100%;
+}
+
+// Angular Material
+.mat-cell:not(:last-child),
+.mat-header-cell:not(:last-child) {
+    padding-right: 8px;
+}
+
+.mat-menu-item-highlighted:not([disabled]),
+.mat-menu-item.cdk-keyboard-focused:not([disabled]),
+.mat-menu-item.cdk-program-focused:not([disabled]),
+.mat-menu-item:hover:not([disabled]) {
+    background: rgba(0, 0, 0, 0.08) !important;
+}
+.mat-menu-item.active:not(:hover) {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; 
+}
+input[type="number"] {
+    -moz-appearance: textfield; /* Firefox */
+}
+
+
+.barraDeMenu{
+    background: linear-gradient(to right, #0066b3 0%, #45c0ae 100%) !important;
+}
+
+.tituloDegrade{
+    color: white;
+    font-weight: bold;
+    background: linear-gradient(to right, #0066b3 0%, #45c0ae 100%) !important;
+    color: #ffffff;
+    text-align: left;
+    border-style: solid;
+    display: inline-block;
+    border-radius: 10px 10px;
+    width: 100%;
+}
+
+.botaoazul{
+    background: #0066b3 !important; //linear-gradient(to right, #0066b3 0%, #45c0ae 100%) !important;
+    color: #ffffff;
+}
+
+.botaolaranja{
+    background: orange !important;  // linear-gradient(to right, red 0%, orange 100%) !important;
+    color: #ffffff;
+}
+
+.titulo{
+    color: white;
+    font-weight: bold;
+    color: #0066b3;
+    text-align: center;
+    border-style: solid;
+    display: inline-block;
+    border-radius: 10px 10px;
+    width: 100%;
+}
+

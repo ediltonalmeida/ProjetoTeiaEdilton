@@ -1,0 +1,42 @@
+.error-msg {
+    background: #d73a49;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 300;
+    white-space: pre-line;
+}
+
+.botao-copiar-mensagem {
+    margin-bottom: 20px;
+}
+
+.icone-check {
+    font-size: 30px;
+    color: white;
+    vertical-align: middle;
+
+    position: absolute;
+    z-index: 1;
+}
+
+.curtain {
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.curtain-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.curtain-panel {
+    background: #d73a49;
+    width: 100%;
+    height: 100%;
+    float: right;
+    position: relative;
+    z-index: 2;
+}
